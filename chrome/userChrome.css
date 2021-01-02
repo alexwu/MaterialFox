@@ -7,3 +7,55 @@
 @import "popup/popup.css";
 @import "urlbar/urlbar.css";
 @import "findbar/findbar.css";
+
+:root {
+  background: transparent !important;
+}
+
+#main-window {
+  background-color: transparent !important;
+}
+
+.theme-body {
+  background: transparent !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  #TabsToolbar,
+  .tab-background-inner,
+  .theme-dark,
+  .theme-light,
+  slider,
+  .CodeMirror,
+  .devtools-toolbar,
+  .message,
+  .theme-body,
+  .table-widget-empty-text {
+    -moz-appearance: -moz-mac-vibrancy-dark !important;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  #TabsToolbar,
+  .tab-background-inner,
+  .theme-dark,
+  .theme-light,
+  slider,
+  .CodeMirror,
+  .devtools-toolbar,
+  .message,
+  .theme-body,
+  .table-widget-empty-text {
+    -moz-appearance: -moz-mac-vibrancy-light !important;
+  }
+
+  /* Fix a few colors in light mode */
+  .tabbrowser-tab:not([selected="true"])
+    :-moz-window-inactive
+    > .tab-label-container {
+    color: rgba(0, 0, 0, 1);
+  }
+  #TabsToolbar .tabbrowser-tab:not([selected="true"]) {
+    color: rgba(0, 0, 0, 0.9) !important;
+  }
+}
